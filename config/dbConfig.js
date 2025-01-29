@@ -1,18 +1,18 @@
 const { Sequelize } = require('sequelize');
 
-const sequelize = new Sequlize('dbLat', 'root', '', {
+const sequelize = new Sequelize('dbLat', 'root', '', {
     host: 'localhost',
     dialect: 'mysql',
-    logging: 'false',
+    logging: false, 
     define: {
         underscored: true,
-        timestamp: true
+        timestamps: true, 
     }
 });
 
 sequelize.authenticate()
   .then(() => {
-    console.log('Koneksi ke Database...');
+    console.log('Koneksi ke Database berhasil...');
   })
   .catch(err => {
     console.error('Error:', err);
